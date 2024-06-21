@@ -1,6 +1,7 @@
 # Bare_Metal_Firmware_Base  
 Bare Metal Firmware Base code.  
-  
+Bare Metal Firmware Base 는 NOOS로 별칭으로 이야기 하겠습니다.  
+
 Bare Metal 펌웨어는 Polling 방식으로 구현됩니다.  
 
 지켜야 할 수칙.  

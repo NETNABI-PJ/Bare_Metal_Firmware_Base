@@ -19,6 +19,8 @@ Bare Metal 펌웨어는 Polling 방식으로 구현됩니다.
              (단점 CPU 사용률 0% 표시 불가능, CPU 처리속도 관점으로 본 경우)
       - 2안. 기본 구현된 Function Maim loop 카운터값을 0%로 백분률 계산  
              ( CPU 사용률이 0% 표시 가능, 이벤트 처리관점으로 본 경우)
-4. BASE TIME
-   (1) DWT(Debug Waitch Timer): 32Bit 카운터 Cortex-M4 급 이상
+4. BASE TIME  
+   (1) DWT(Debug Waitch Timer): 32Bit 카운터 Cortex-M4 급 이상  
    (2) SYSTICK : 24Bit 카운터
+   (3) CNTPCT_EL0 : 64Bit 카운터 /2분주비 클럭소스 선택 (미확인)
+   

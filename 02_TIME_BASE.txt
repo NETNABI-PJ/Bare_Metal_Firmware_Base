@@ -1,7 +1,14 @@
 
   Bare Metal Frimware Base는 이하 NOOS라고 별칭 으로 설명  
-  NOOS 는 NO OS 붙임말.  
+  NOOS 는 NO OS 붙임말. 
+
 02.Time base type
-  (1) DWT(Debug Waitch Timer): 32Bit 카운터 Cortex-M4 급 이상
-  (2) SYSTICK : 24Bit 카운터
-  (3) CNTPCT_EL0 : 64Bit 카운터 /2분주비 클럭소스 선택 (미확인) MPU
+  여기에서는 인터럽트를 사용 하지 않고 동작 스탑워치 개념으로 동작 됩니다.
+  
+  #타이머 종류
+    (1) DWT(Debug Waitch Timer): 32Bit 카운터 Cortex-M4 급 이상 
+       [코드명 d_COUNT_DWT] 
+    (2) SYSTICK : 24Bit 카운터
+       [코드명 d_COUNT_SYSTICK]
+    (3) CNTPCT_EL0 : 64Bit 카운터 /2분주비 클럭소스 선택 (미확인) MPU
+       [코드명 d_COUNT_CNTPCT_EL0]

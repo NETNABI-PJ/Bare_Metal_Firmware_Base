@@ -1,0 +1,42 @@
+BMFB (Bare Metal Firmware Base) 설명
+
+멀티코어 고려 구조작성
+Core0 - Main Core
+Core1 - Sub1 Core
+Core2 - Sub2 Core
+Core3 - Sub3 Core
+
+Main Core 가 Sub Core에게 작업을 할당한다.
+
+2. MAIN LOOP 구조
+  MCU Polling 동작을 기본 수행
+  (1) MAIN INIT 수행
+  (2) SUB CORE 동작 (옵션)
+  (3) MAIN LOOP 동작
+    - TIME_20ms
+    - TIME_50ms
+    - TIME_100ms
+    - TIME_200ms
+    - TIME_500ms
+    - TIME_1s
+    - H/W PIN MODULE
+    - ETH_MODULE
+    - UART_MODULE
+    - USB_MODULE
+    ...
+    - SPI_MODULE
+    - ETH_MODULE
+    - 시스템 로그 수집 (Loop 걸린시간, 각종 버퍼 상태 업데이트)
+
+3. MODULE 내부 구조
+  모듈은 인터페이스 기준으로 나눠지며 다음과 같은 처리를 한다.
+  초기 f_ETH_Module_Init 초기화
+  (0) Moudle Enable : 모듈활성화 유무 상태 확인.
+  (1) Module Start Time 기록
+  (2) 수신버퍼 확인 : 인터럽트 DMA를 통한 수신된 데이터 확인.
+  (3) 데이터 분석 : 패킷데이터 분석 처리
+  (4) 송신버퍼 쓰기 : 버퍼에 데이터를 쓰기
+  (5) 데이터 전송 : 인터페이스 전송이 휴유 상태인경우 버퍼 내용 저장
+  (6) 에러로그 업데이트 (버퍼 Overflow 등 이상유무 상태 업데이트)
+  (7) Moudle End Time 확인 총 수행 시간 기록 (us)
+

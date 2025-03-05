@@ -1,4 +1,14 @@
 # 코딩규칙 250305
+코딩스타일  
+f_DataPos, f_Data_Pos, 혼합 형태로 사용.  
+Data Pos -> Data_Pos, DataPos  첫글짜를 대문자료 표기  이는 내부 선언시 약어로 사용  
+하이픈 _ 은 대분류  동작은 WriteSend 형태로 되도록.    
+f_Main_Control_Massage(char * p_MCM_Text)  
+{  
+　　uint32_t v_MCM_Error = 0;  
+}  
+
+
 01.　 a = array variable　　　　　　e.g. a_Data[]  
 02.　 b = bit fields　　　　　　　　 e.g. b_Data  
 03.　 c = const　　　　　　　　　　　e.g, c_Data  

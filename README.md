@@ -19,9 +19,9 @@
 1) 접두어사용 소문자_  이게 변수인지 함수이지 바로 알기 위해 위에표 기준으로 작성
 2) 헤더 파일에 (*.h) 내부 Define은 다음과 같이 정의  
    D_CODEC_H   파일명은 Codec.h 이며 d는 헤더파일 Define 시 대문자로 표기  
-   이는 일반 d_ 하고 구분하기 위한 조치
-   #ifndef D_CODEC_H  
-   #define D_CODEC_H  
+   이는 일반 d_ 하고 구분하기 위한 조치  
+   #ifndef D_CODEC_H   
+   #define D_CODEC_H   
 4) 헤더 파일은 2가지로 지정  
    - xxxx_type.h 헤더파일  
    Struct, enum 는 데이터 형태만 선언 순수 데이터 구조만 사용  
